@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Chitwan Removal | Professional Moving & Relocation Services{% endblock %}</title>
+    
+    <!-- SEO Meta & Optimization Tags -->
+    <meta name="description" content="Chitwan Removal offers premium, stress-free moving services including interstate moves, furniture assembly, small pick & drops, rubbish removal, and second-hand appliances in Lidcombe. Get a free quote today!">
+    <meta name="keywords" content="Chitwan Removal, moving services Lidcombe, interstate moves, furniture assembly, rubbish removal, small pick and drop, second hand appliances, removalist Sydney">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+    <!-- Favicon / Browser Tab Icon -->
+    <link rel="icon" type="image/jpeg" href="{% static 'images/logo_chitwan_removal.jpeg' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/logo_chitwan_removal.jpeg' %}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chitwan Removal | Professional Moving & Relocation">
+    <meta property="og:description" content="Let us take the stress out of your next move. Reliable, safe, and professional removalists.">
+    <meta property="og:image" content="{% static 'images/logo_chitwan_removal.jpeg' %}">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %} {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- STICKY HEADER AND NAVIGATION CONTAINER -->
+    <header class="sticky-header">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container topbar-wrapper">
+                <div class="topbar-info">
+                    <a href="tel:0470266582"><i class="fas fa-phone-alt"></i> 0470 266 582</a>
+                    <a href="mailto:cnsgroup30@gmail.com"><i class="fas fa-envelope"></i> cnsgroup30@gmail.com</a>
+                    <span><i class="fas fa-map-marker-alt"></i> 22 Clarence Street, Lidcombe</span>
+                </div>
+                <div class="topbar-socials">
+                    <a href="#" class="brand-fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="brand-insta" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="brand-tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/0470266582" class="brand-whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced High-Visibility Navbar -->
+        <nav class="navbar">
+            <div class="container navbar-wrapper">
+                <a href="{% url 'index' %}" class="logo-brand" aria-label="Chitwan Removal Home">
+                    <img src="{% static 'images/logo_chitwan_removal.jpeg' %}" alt="Chitwan Removal Premium Logo" class="nav-logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                    <li><a href="{% url 'services' %}" class="nav-link">Our Services</a></li>
+                    <li><a href="{% url 'appliances' %}" class="nav-link">Appliances</a></li>
+                    <li><a href="{% url 'contact' %}" class="nav-btn">Get a Quote</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- STICKY BRANDED SOCIAL WIDGET ROW (Left Flank Floating Desktop/Tablet) -->
+    <div class="sticky-social-dock">
+        <a href="https://wa.me/0470266582" class="dock-item wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="dock-item fb" aria-label="Visit Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="dock-item tt" aria-label="Visit TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" class="dock-item ig" aria-label="Visit Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- BRAND AUTHENTIC FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="{% static 'images/logo_chitwan_removal.jpeg' %}" alt="Chitwan Removal Trust Badge" class="footer-logo">
+                <p>Let us take the stress out of your next move. Providing premium, safe, reliable, and expert relocation services across state lines or right down the street.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                    <li><a href="{% url 'services' %}">Our Services</a></li>
+                    <li><a href="{% url 'appliances' %}">Appliances Inventory</a></li>
+                    <li><a href="{% url 'contact' %}">Request Quote</a></li>
+                </ul>
+            </div>
+            <div class="footer-services">
+                <h3>Our Core Solutions</h3>
+                <ul>
+                    <li>Interstate Relocation</li>
+                    <li>Furniture Assembly Patterns</li>
+                    <li>Small Volume Pick & Drops</li>
+                    <li>Eco-Friendly Rubbish Removal</li>
+                    <li>Certified Second-Hand Goods</li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Details</h3>
+                <p><i class="fas fa-phone-alt"></i> 0470 266 582</p>
+                <p><i class="fas fa-envelope"></i> cnsgroup30@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 22 Clarence St, Lidcombe</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Chitwan Removal. All Rights Reserved. Optimised for Google Search Engine Performance.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts Execution Core -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <!-- Start of Tawk.to Live Chat Script -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/695a312679755a1983139d58/1je4500j8';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    
+    // Custom Tawk.to Primary Branding Synchronization Color Injection
+    Tawk_API.customStyle = {
+        visibility : {
+            desktop : { position : 'br', xOffset : 25, yOffset : 25 },
+            mobile : { position : 'br', xOffset : 15, yOffset : 15 }
+        }
+    };
+    </script>
+    <!-- End of Tawk.to Script -->
+</body>
+</html>

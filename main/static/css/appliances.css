@@ -1,0 +1,600 @@
+/* ==========================================================================
+   HIGH-PERFORMANCE APPLIANCES PAGE STYLING (appliances.css)
+   ========================================================================== */
+
+/* Core Layout Wrapper & Root Settings */
+.appliances-page-wrapper {
+    background-color: #F8FAFC;
+    color: #1E293B;
+    font-family: inherit;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Wide Container with Minimal Side Whitespace for Ultra-Wide / Desktop */
+.compact-container {
+    max-width: 1280px;
+    width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------
+   SECTION 1: HERO BANNER SECTION (60px Vertical Padding)
+-------------------------------------------------- */
+.appliances-hero {
+    position: relative;
+    padding: 60px 0;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(15, 76, 42, 0.92) 0%, rgba(17, 24, 39, 0.88) 100%),
+                url('../images/hero-banner.jpg') center/cover no-repeat;
+    color: #FFFFFF;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appliances-hero .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.appliances-hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.appliances-hero .micro-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #F2A900;
+    border: 1px solid rgba(242, 169, 0, 0.4);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.appliances-hero h1 {
+    font-size: clamp(2.1rem, 4vw, 3.25rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0 0 14px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.appliances-hero p {
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    max-width: 760px;
+    margin: 0 auto 24px auto;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.hero-highlights-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.hero-highlights-pills span {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.hero-highlights-pills span:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.hero-highlights-pills span i {
+    color: #F2A900;
+    margin-right: 8px;
+}
+
+/* --------------------------------------------------
+   SECTION 2: APPLIANCES CATALOG GRID (60px Vertical Padding)
+-------------------------------------------------- */
+.appliances-catalog-section {
+    padding: 60px 0;
+}
+
+.section-header {
+    margin-bottom: 2.5rem;
+}
+
+.section-subtitle {
+    display: inline-block;
+    color: #BA1C23;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    color: #111827;
+    font-size: clamp(1.75rem, 3vw, 2.35rem);
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: -0.3px;
+}
+
+.section-lead {
+    font-size: 1.05rem;
+    color: #4B5563;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Appliances Grid Architecture */
+.appliances-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 28px;
+}
+
+/* Appliance Card */
+.appliance-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid #E5E7EB;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
+.appliance-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(15, 76, 42, 0.08);
+    border-color: rgba(15, 76, 42, 0.3);
+}
+
+.appliance-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background-color: #BA1C23;
+    color: #FFFFFF;
+    font-size: 0.725rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 3;
+    box-shadow: 0 2px 8px rgba(186, 28, 35, 0.3);
+}
+
+.appliance-media-pane {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    background-color: #E2E8F0;
+}
+
+.appliance-media-pane img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.appliance-card:hover .appliance-media-pane img {
+    transform: scale(1.06);
+}
+
+.media-overlay-tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(15, 76, 42, 0.88);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #FFFFFF;
+    font-size: 0.725rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Info Pane Inner */
+.appliance-info-pane {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.appliance-info-pane h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+}
+
+.small-accent-indicator {
+    height: 3px;
+    width: 36px;
+    background-color: #BA1C23;
+    margin-bottom: 12px;
+    border-radius: 2px;
+}
+
+.small-accent-indicator-gold {
+    height: 3px;
+    width: 36px;
+    background-color: #F2A900;
+    margin-bottom: 12px;
+    border-radius: 2px;
+}
+
+.appliance-desc {
+    font-size: 0.925rem;
+    color: #4B5563;
+    line-height: 1.55;
+    margin: 0 0 16px 0;
+}
+
+.spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.spec-list li {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.spec-list li:last-child {
+    margin-bottom: 0;
+}
+
+.spec-list li i {
+    color: #0F4C2A;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* Card Action Row */
+.card-action-row {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid #F1F5F9;
+    gap: 12px;
+}
+
+.stock-status {
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.stock-status.in-stock {
+    color: #16A34A;
+}
+
+.stock-status.in-stock i {
+    font-size: 0.45rem;
+}
+
+.btn-appliance-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #0F4C2A;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-appliance-cta:hover {
+    background-color: #BA1C23;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(186, 28, 35, 0.2);
+}
+
+.btn-appliance-cta i {
+    transition: transform 0.2s ease;
+}
+
+.btn-appliance-cta:hover i {
+    transform: translateX(3px);
+}
+
+/* --------------------------------------------------
+   SECTION 3: WHY BUY FROM US BANNER (60px Vertical Padding)
+-------------------------------------------------- */
+.appliances-features-section {
+    padding: 60px 0;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.features-box {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.features-header h2 {
+    color: #111827;
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+    font-weight: 800;
+    margin: 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 36px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 28px 20px;
+    border-radius: 12px;
+    background-color: #F8FAFC;
+    border: 1px solid #E5E7EB;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(15, 76, 42, 0.3);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(15, 76, 42, 0.1);
+    color: #0F4C2A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin: 0 auto 18px auto;
+}
+
+.feature-item h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 10px 0;
+}
+
+.feature-item p {
+    font-size: 0.925rem;
+    color: #4B5563;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* --------------------------------------------------
+   SECTION 4: CALL TO ACTION BANNER (60px Vertical Padding)
+-------------------------------------------------- */
+.appliances-cta-section {
+    padding: 60px 0;
+}
+
+.cta-banner {
+    background: linear-gradient(135deg, #0F4C2A 0%, #0A341D 100%);
+    border-radius: 16px;
+    padding: 40px 32px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    box-shadow: 0 12px 32px rgba(15, 76, 42, 0.18);
+}
+
+@media (min-width: 992px) {
+    .cta-banner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+.cta-text-content h2 {
+    font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+    line-height: 1.25;
+}
+
+.cta-text-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    max-width: 650px;
+    line-height: 1.55;
+}
+
+.cta-button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary-cta {
+    background-color: #F2A900;
+    color: #111827;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(242, 169, 0, 0.25);
+    white-space: nowrap;
+}
+
+.btn-primary-cta:hover {
+    background-color: #E09C00;
+    color: #111827;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(242, 169, 0, 0.35);
+}
+
+.btn-secondary-cta {
+    border: 2px solid #FFFFFF;
+    background-color: transparent;
+    color: #FFFFFF;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-secondary-cta:hover {
+    background-color: #FFFFFF;
+    color: #0F4C2A;
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------
+   RESPONSIVE BREAKPOINTS & MOBILE OPTIMIZATIONS
+-------------------------------------------------- */
+@media (max-width: 991px) {
+    .cta-button-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Maintain exact 60px padding on mobile devices */
+    .appliances-hero,
+    .appliances-catalog-section,
+    .appliances-features-section,
+    .appliances-cta-section {
+        padding: 60px 0;
+    }
+
+    .compact-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .appliances-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cta-banner {
+        padding: 32px 20px;
+    }
+
+    .cta-button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary-cta, 
+    .btn-secondary-cta {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .card-action-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .stock-status {
+        justify-content: center;
+    }
+
+    .btn-appliance-cta {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-highlights-pills {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-highlights-pills span {
+        justify-content: center;
+    }
+}

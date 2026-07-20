@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Professional Moving & Clearing Services | Chitwan Removal{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+{% block content %}
+<main class="services-page-wrapper">
+    <!-- HERO BANNER SECTION -->
+    <section class="services-intro-hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="container compact-container hero-content">
+            <span class="micro-badge"><i class="fas fa-shield-alt"></i> Premium Logistics & Handling</span>
+            <h1>Our Moving & Relocation Services</h1>
+            <p>Every operational branch is managed with absolute structural care, fully insured transit guidelines, and premium handling protocols to safeguard your assets.</p>
+        </div>
+    </section>
+
+    <!-- DETAILED SERVICES SECTION -->
+    <section class="services-detailed-section">
+        <div class="container compact-container services-stack-grid">
+            
+            <!-- Service Card 01 -->
+            <div class="detailed-service-card">
+                <div class="service-media-pane">
+                    <img src="{% static 'images/interstate_moves.png' %}" alt="Interstate Moves Truck" loading="eager" width="400" height="280">
+                    <div class="media-overlay-tag"><i class="fas fa-map-marked-alt"></i> Australia Wide</div>
+                </div>
+                <div class="service-info-pane">
+                    <span class="service-num-badge">01</span>
+                    <h2>Interstate Moves</h2>
+                    <div class="small-accent-indicator"></div>
+                    <ul class="feature-bullets">
+                        <li><i class="fas fa-check-circle"></i> Seamless long-distance relocation across state lines.</li>
+                        <li><i class="fas fa-check-circle"></i> Expert packing and secure transit for absolute peace of mind.</li>
+                        <li><i class="fas fa-check-circle"></i> Timely delivery to your new destination, no matter the distance.</li>
+                    </ul>
+                    <a href="#quote" class="inline-service-btn">Book Interstate Move <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Service Card 02 (Reverse) -->
+            <div class="detailed-service-card card-reverse">
+                <div class="service-media-pane">
+                    <img src="{% static 'images/furniture_assemble.png' %}" alt="Furniture Assembly and Disassembly Operations" loading="lazy" width="400" height="280">
+                    <div class="media-overlay-tag"><i class="fas fa-tools"></i> Expert Crew</div>
+                </div>
+                <div class="service-info-pane">
+                    <span class="service-num-badge">02</span>
+                    <h2>Furniture Assembly & Disassembly</h2>
+                    <div class="small-accent-indicator"></div>
+                    <ul class="feature-bullets">
+                        <li><i class="fas fa-check-circle"></i> Professional handling of complex residential and commercial furniture pieces.</li>
+                        <li><i class="fas fa-check-circle"></i> Expert assembly and disassembly to save you critical time and physical effort.</li>
+                        <li><i class="fas fa-check-circle"></i> Ensuring your furniture is set up correctly and safely in your new home structure.</li>
+                    </ul>
+                    <a href="#quote" class="inline-service-btn">Book Assembly Team <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Service Card 03 -->
+            <div class="detailed-service-card">
+                <div class="service-media-pane">
+                    <img src="{% static 'images/small_pick_drops.jpeg' %}" alt="Small Pick and Drops Delivery Van" loading="lazy" width="400" height="280">
+                    <div class="media-overlay-tag"><i class="fas fa-shipping-fast"></i> Quick Express</div>
+                </div>
+                <div class="service-info-pane">
+                    <span class="service-num-badge">03</span>
+                    <h2>Small Pick & Drops</h2>
+                    <div class="small-accent-indicator"></div>
+                    <ul class="feature-bullets">
+                        <li><i class="fas fa-check-circle"></i> Perfect for single items, store pickups, or targeted small deliveries.</li>
+                        <li><i class="fas fa-check-circle"></i> Flexible scheduling frameworks tailored completely around your active lifestyle.</li>
+                        <li><i class="fas fa-check-circle"></i> Safe handling of your items meticulously from point A to point B.</li>
+                    </ul>
+                    <a href="#quote" class="inline-service-btn">Request Small Transit <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Service Card 04 (Reverse) -->
+            <div class="detailed-service-card card-reverse">
+                <div class="service-media-pane">
+                    <img src="{% static 'images/rubbish_removal.jpeg' %}" alt="Eco Friendly Rubbish Removal Service" loading="lazy" width="400" height="280">
+                    <div class="media-overlay-tag"><i class="fas fa-leaf"></i> Eco Friendly</div>
+                </div>
+                <div class="service-info-pane">
+                    <span class="service-num-badge">04</span>
+                    <h2>Rubbish Removal</h2>
+                    <div class="small-accent-indicator"></div>
+                    <ul class="feature-bullets">
+                        <li><i class="fas fa-check-circle"></i> Fast and highly responsible structural disposal of unwanted items and property clutter.</li>
+                        <li><i class="fas fa-check-circle"></i> Eco-friendly waste practices to minimize environmental footprint impact.</li>
+                        <li><i class="fas fa-check-circle"></i> Clear out your physical space with our completely hassle-free cleanup removal service.</li>
+                    </ul>
+                    <a href="#quote" class="inline-service-btn">Request Rubbish Clearing <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Service Card 05 -->
+            <div class="detailed-service-card">
+                <div class="service-media-pane">
+                    <img src="{% static 'images/second_hand_appliance.png' %}" alt="Quality Checked Second Hand Whitegoods" loading="lazy" width="400" height="280">
+                    <div class="media-overlay-tag gold-tag"><i class="fas fa-award"></i> Verified Quality</div>
+                </div>
+                <div class="service-info-pane">
+                    <span class="service-num-badge">05</span>
+                    <h2>Second-Hand Appliances</h2>
+                    <div class="small-accent-indicator-gold"></div>
+                    <p class="appliances-tagline">Quality You Can Trust</p>
+                    <ul class="feature-bullets">
+                        <li><i class="fas fa-check-circle"></i> Thoroughly tested whitegoods, refrigerators, and laundry solutions.</li>
+                        <li><i class="fas fa-check-circle"></i> Completely verified functionality and cleanliness standards before distribution.</li>
+                        <li><i class="fas fa-check-circle"></i> Direct home delivery and installation options handled by our moving fleet.</li>
+                    </ul>
+                    <a href="#quote" class="inline-service-btn accent-btn">Browse Whitegoods Store <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+{% endblock %}

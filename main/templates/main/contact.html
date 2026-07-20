@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us | Chitwan Removal & Logistics{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="contact-page-wrapper">
+
+    <!-- HERO BANNER SECTION (60px Padding) -->
+    <section class="contact-hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="container compact-container hero-content">
+            <span class="micro-badge"><i class="fas fa-headset"></i> 24/7 Client Support</span>
+            <h1>Get In Touch With Us</h1>
+            <p>Have questions about interstate moving, local deliveries, or whitegoods availability? Reach out to our team today for fast, friendly assistance.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTACT SECTION (60px Padding) -->
+    <section class="contact-main-section">
+        <div class="container compact-container">
+            
+            <!-- CONTACT INFO CARDS GRID -->
+            <div class="contact-cards-grid">
+                
+                <!-- Card 1: Direct Phone -->
+                <div class="contact-info-card">
+                    <div class="card-icon"><i class="fas fa-phone-alt"></i></div>
+                    <h3>Call Us Directly</h3>
+                    <p>Speak with our dispatch & estimation team for immediate booking availability.</p>
+                    <a href="tel:0470266582" class="contact-link">0470 266 582</a>
+                </div>
+
+                <!-- Card 2: Email -->
+                <div class="contact-info-card">
+                    <div class="card-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Send An Email</h3>
+                    <p>For custom quotes, detailed inventories, or partnership inquiries.</p>
+                    <a href="mailto:cnsgroup30@gmail.com" class="contact-link">cnsgroup30@gmail.com</a>
+                </div>
+
+                <!-- Card 3: Address / Location -->
+                <div class="contact-info-card">
+                    <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Our Location</h3>
+                    <p>Visit or drop by our operational hub and office location.</p>
+                    <span class="contact-text-highlight">22 Clarence St, Lidcombe</span>
+                </div>
+
+            </div>
+
+            <!-- FORM & OPERATIONAL INFO DUAL COLUMN GRID -->
+            <div class="contact-content-grid">
+                
+                <!-- Left Column: Form -->
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <span class="section-subtitle">Send A Message</span>
+                        <h2>Request Information</h2>
+                        <p>Fill out the form below and one of our logistics specialists will get back to you shortly.</p>
+                    </div>
+
+                    <form method="post" action="{% url 'contact' %}" class="main-contact-form">
+                        {% csrf_token %}
+                        <div class="form-row-2col">
+                            <div class="form-group">
+                                <label for="id_full_name">Full Name <span class="required">*</span></label>
+                                <input type="text" name="full_name" id="id_full_name" class="form-control" placeholder="e.g. John Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="id_phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" name="phone" id="id_phone" class="form-control" placeholder="e.g. 0470 266 582" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_email">Email Address <span class="required">*</span></label>
+                            <input type="email" name="email" id="id_email" class="form-control" placeholder="e.g. john@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_service_type">Service Interest</label>
+                            <select name="service_type" id="id_service_type" class="form-control">
+                                <option value="" selected disabled>Select a service option...</option>
+                                <option value="Interstate Move">Interstate Move</option>
+                                <option value="Furniture Assembly">Furniture Assembly / Disassembly</option>
+                                <option value="Small Pick & Drops">Small Pick & Drops</option>
+                                <option value="Rubbish Removal">Rubbish Removal</option>
+                                <option value="Second Hand Appliances">Second-Hand Appliances</option>
+                                <option value="Other Query">Other General Query</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_message">Your Message / Request <span class="required">*</span></label>
+                            <textarea name="message" id="id_message" rows="5" class="form-control" placeholder="Provide details about your move size, dates, or specific appliance request..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit-contact">
+                            <span>Send Message</span> <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right Column: Business Hours & Trust Features -->
+                <div class="contact-info-sidebar">
+                    
+                    <!-- Operating Hours Box -->
+                    <div class="sidebar-box hours-box">
+                        <h3><i class="fas fa-clock"></i> Operating Hours</h3>
+                        <div class="small-accent-indicator"></div>
+                        <ul class="hours-list">
+                            <li>
+                                <span>Monday – Friday</span>
+                                <strong>7:00 AM – 6:00 PM</strong>
+                            </li>
+                            <li>
+                                <span>Saturday</span>
+                                <strong>8:00 AM – 5:00 PM</strong>
+                            </li>
+                            <li>
+                                <span>Sunday</span>
+                                <strong>By Appointment</strong>
+                            </li>
+                        </ul>
+                        <div class="emergency-note">
+                            <i class="fas fa-phone-volume"></i> Emergency or urgent weekend jobs? Call us at <strong>0470 266 582</strong>.
+                        </div>
+                    </div>
+
+                    <!-- Trust Box -->
+                    <div class="sidebar-box trust-box">
+                        <h3>Why Reach Out To Us?</h3>
+                        <div class="small-accent-indicator-gold"></div>
+                        <ul class="trust-check-list">
+                            <li><i class="fas fa-check-circle"></i> Quick response times for phone and email quotes</li>
+                            <li><i class="fas fa-check-circle"></i> Fully transparent pricing with zero hidden fees</li>
+                            <li><i class="fas fa-check-circle"></i> Experienced, careful handling of all belongings</li>
+                        </ul>
+                        <a href="{% url 'contact' %}" class="sidebar-quote-cta">
+                            Need an Instant Quote? <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+{% endblock %}

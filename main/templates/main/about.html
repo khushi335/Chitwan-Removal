@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us | Chitwan Removal{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- SECTION 1: High-Impact Hero Banner -->
+<section class="about-hero">
+    <div class="about-hero-overlay"></div>
+    <div class="container hero-content">
+        <span class="hero-badge">Established & Trusted</span>
+        <h1 class="hero-title">Moving Australia With Precision & Care</h1>
+        <p class="hero-subtitle">
+            From local residences to complex commercial operations, discover the story, fleet, and values behind our damage-free moving guarantee.
+        </p>
+        <div class="breadcrumb">
+            <a href="{% url 'index' %}">Home</a> &nbsp;/&nbsp; <span>About Us</span>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 2: Our Heritage & Story -->
+<section class="section-heritage">
+    <div class="container grid-2-col align-center">
+        <div class="heritage-image-wrapper">
+            <img src="{% static 'images/Dynamic_Fleet_Truck_Hauling_Cargo.png' %}" alt="Chitwan Removalists Fleet Truck" class="heritage-img">
+            <div class="experience-badge">
+                <span class="badge-number">10+</span>
+                <span class="badge-text">Years of Excellence</span>
+            </div>
+        </div>
+        <div class="heritage-content">
+            <span class="section-subtitle">Our Heritage</span>
+            <h2 class="section-title">Redefining Removal Logistics Across the Country</h2>
+            <p class="section-lead">
+                Chitwan Removalists started with a simple vision: to take the stress, anxiety, and risk out of moving homes and businesses.
+            </p>
+            <p class="section-text">
+                What began as a small family-operated van service has grown into a high-performance logistics fleet. Every move we undertake is managed with absolute structural care, verified safety protocols, and transparent upfront pricing.
+            </p>
+            
+            <ul class="heritage-highlights">
+                <li><i class="icon-check">✓</i> 100% Fully Insured Transit</li>
+                <li><i class="icon-check">✓</i> No Hidden Call-Out Charges</li>
+                <li><i class="icon-check">✓</i> State-of-the-Art Padded Equipment</li>
+                <li><i class="icon-check">✓</i> Punctual, Professional Crew</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3: Performance Metrics & Key Stats -->
+<section class="section-stats">
+    <div class="container stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Successful Moves</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">99.8%</div>
+            <div class="stat-label">Satisfied Clients</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Insured Transport</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">7 Days</div>
+            <div class="stat-label">Weekly Service</div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 4: Guiding Principles & Values -->
+<section class="section-principles">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-subtitle">Guiding Principles</span>
+            <h2 class="section-title">The Values That Drive Our Operations</h2>
+            <p class="section-lead">Our commitment to excellence is reflected in every item we load, transport, and assemble.</p>
+        </div>
+
+        <div class="principles-grid">
+            <div class="principle-card">
+                <div class="principle-icon">🛡️</div>
+                <h3>Utmost Item Care</h3>
+                <p>We treat every item as if it were our own, utilizing heavy-duty furniture blankets, soft wraps, and custom tie-downs.</p>
+            </div>
+            <div class="principle-card">
+                <div class="principle-icon">💎</div>
+                <h3>Total Transparency</h3>
+                <p>Clear, fixed pricing without surprise fees, unexpected staircase surcharges, or hidden call-out costs.</p>
+            </div>
+            <div class="principle-card">
+                <div class="principle-icon">⏱️</div>
+                <h3>Punctuality First</h3>
+                <p>Time matters. Our drivers utilize real-time GPS fleet tracking to ensure accurate arrival and swift execution.</p>
+            </div>
+            <div class="principle-card">
+                <div class="principle-icon">🚛</div>
+                <h3>Modern Equipment</h3>
+                <p>Hydraulic tail-lifts, specialized trolleys, and clean, air-ride vehicles engineered for delicate freight.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 5: Dedicated Fleet & Operational Standards -->
+<section class="section-fleet-standards">
+    <div class="container grid-2-col align-center">
+        <div class="standards-content">
+            <span class="section-subtitle">Engineering Safety</span>
+            <h2 class="section-title">Built for Delicates, Heavy Equipment & High-Value Goods</h2>
+            <p>Our operational standards meet the rigorous demands of modern transit. Each vehicle in our fleet undergoes daily safety checks and comes fully equipped with modern transit tools.</p>
+            
+            <div class="feature-box-list">
+                <div class="feature-box">
+                    <strong>Tailgate Lift Systems</strong>
+                    <p>Enabling safe, smooth loading of heavy appliances without structural tilt.</p>
+                </div>
+                <div class="feature-box">
+                    <strong>Air-Ride Cushioning</strong>
+                    <p>Minimizing road vibrations to protect fragile items and glasswork during transit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="standards-image">
+            <img src="{% static 'images/moving-crew.png' %}" alt="Professional Removal Team" class="rounded-img shadow-lg">
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 6: Regional Coverage & Fleet Reach -->
+<section class="section-coverage">
+    <div class="container text-center">
+        <span class="section-subtitle">Nationwide Reach</span>
+        <h2 class="section-title">Serving Lidcombe, Sydney & Interstate Routes</h2>
+        <p class="coverage-text">Strategically based out of Lidcombe, our network covers metro suburbs, rural hubs, and long-haul interstate routes with equal efficiency.</p>
+        
+        <div class="locations-tag-cloud">
+            <span class="tag">Lidcombe</span>
+            <span class="tag">Sydney Metro</span>
+            <span class="tag">Parramatta</span>
+            <span class="tag">Strathfield</span>
+            <span class="tag">Interstate NSW</span>
+            <span class="tag">Brisbane Routes</span>
+            <span class="tag">Melbourne Express</span>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 7: Call To Action (CTA) Banner -->
+<section class="section-cta">
+    <div class="container">
+        <div class="cta-box">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Experience a Stress-Free Move?</h2>
+                <p class="cta-text">Share your moving details with us to receive a transparent price quote instantly.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="{% url 'contact' %}" class="btn btn-gold">Get Instant Quote</a>
+                <a href="tel:0470266582" class="btn btn-outline">Call Our Crew: 0470 266 582</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

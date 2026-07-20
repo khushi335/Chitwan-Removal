@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Quality Second-Hand Appliances | Chitwan Removal{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/appliances.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="appliances-page-wrapper">
+
+    <!-- HERO BANNER SECTION -->
+    <section class="appliances-hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="container compact-container hero-content">
+            <span class="micro-badge"><i class="fas fa-check-double"></i> Tested & Verified Whitegoods</span>
+            <h1>Quality Second-Hand Appliances</h1>
+            <p>Affordable, fully tested, and deep-cleaned home appliances delivered and installed straight to your doorstep by our professional moving team.</p>
+            <div class="hero-highlights-pills">
+                <span><i class="fas fa-shield-alt"></i> Cleaned & Tested</span>
+                <span><i class="fas fa-truck"></i> Fast Local Delivery</span>
+                <span><i class="fas fa-wrench"></i> Optional Setup</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPLIANCES CATEGORIES / CATALOG SECTION -->
+    <section class="appliances-catalog-section">
+        <div class="container compact-container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Our Inventory</span>
+                <h2 class="section-title">Featured Appliance Categories</h2>
+                <p class="section-lead">Browse our selection of quality-checked fridge options, washing machines, dryers, and home essentials.</p>
+            </div>
+
+            <!-- APPLIANCES GRID -->
+            <div class="appliances-grid">
+
+                <!-- Appliance Card 1 -->
+                <div class="appliance-card">
+                    <div class="appliance-badge">Popular</div>
+                    <div class="appliance-media-pane">
+                        <img src="{% static 'images/refrigerator.jpg' %}" alt="Second Hand Refrigerators" loading="eager">
+                    </div>
+                    <div class="appliance-info-pane">
+                        <h3>Refrigerators & Freezers</h3>
+                        <div class="small-accent-indicator-gold"></div>
+                        <p class="appliance-desc">Single door, double door, and top/bottom freezer units. Fully sanitized, temperature-tested, and ready for immediate use.</p>
+                        <ul class="spec-list">
+                            <li><i class="fas fa-check-circle"></i> Cleaned & Deodorized</li>
+                            <li><i class="fas fa-check-circle"></i> Energy Efficient Models</li>
+                            <li><i class="fas fa-check-circle"></i> Multiple Capacity Sizes</li>
+                        </ul>
+                        <div class="card-action-row">
+                            <span class="stock-status in-stock"><i class="fas fa-circle"></i> In Stock</span>
+                            <a href="tel:0470266582" class="btn-appliance-cta">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appliance Card 2 -->
+                <div class="appliance-card">
+                    <div class="appliance-media-pane">
+                        <img src="{% static 'images/washing_machine.jpg' %}" alt="Front and Top Load Washing Machines" loading="lazy">
+                    </div>
+                    <div class="appliance-info-pane">
+                        <h3>Washing Machines</h3>
+                        <div class="small-accent-indicator"></div>
+                        <p class="appliance-desc">Front loaders and top loaders from trusted brands. Inspected for drum health, hose connections, and cycle efficiency.</p>
+                        <ul class="spec-list">
+                            <li><i class="fas fa-check-circle"></i> 5.5kg to 10kg+ Capacity</li>
+                            <li><i class="fas fa-check-circle"></i> Cycle Tested & Leak-Free</li>
+                            <li><i class="fas fa-check-circle"></i> Free Hookup Guidance</li>
+                        </ul>
+                        <div class="card-action-row">
+                            <span class="stock-status in-stock"><i class="fas fa-circle"></i> In Stock</span>
+                            <a href="tel:0470266582" class="btn-appliance-cta">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appliance Card 3 -->
+                <div class="appliance-card">
+                    <div class="appliance-media-pane">
+                        <img src="{% static 'images/dryer.jpg' %}" alt="Clothes Dryers" loading="lazy">
+                    </div>
+                    <div class="appliance-info-pane">
+                        <h3>Clothes Dryers</h3>
+                        <div class="small-accent-indicator-gold"></div>
+                        <p class="appliance-desc">Vented and condenser dryer units. Thermal sensors checked and lint channels cleaned for safe home operation.</p>
+                        <ul class="spec-list">
+                            <li><i class="fas fa-check-circle"></i> Heating Element Checked</li>
+                            <li><i class="fas fa-check-circle"></i> Compact & Wall-Mountable</li>
+                            <li><i class="fas fa-check-circle"></i> Quiet Operation</li>
+                        </ul>
+                        <div class="card-action-row">
+                            <span class="stock-status in-stock"><i class="fas fa-circle"></i> In Stock</span>
+                            <a href="tel:0470266582" class="btn-appliance-cta">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appliance Card 4 -->
+                <div class="appliance-card">
+                    <div class="appliance-media-pane">
+                        <img src="{% static 'images/microwave_kitchen.jpg' %}" alt="Kitchen & Small Appliances" loading="lazy">
+                    </div>
+                    <div class="appliance-info-pane">
+                        <h3>Microwaves & Kitchenware</h3>
+                        <div class="small-accent-indicator"></div>
+                        <p class="appliance-desc">Countertop microwaves, benchtop ovens, and essential kitchen units. Perfect for student accommodations or rental setups.</p>
+                        <ul class="spec-list">
+                            <li><i class="fas fa-check-circle"></i> High-Power Wattage Checked</li>
+                            <li><i class="fas fa-check-circle"></i> Clean Turn-Tables</li>
+                            <li><i class="fas fa-check-circle"></i> Budget-Friendly Pricing</li>
+                        </ul>
+                        <div class="card-action-row">
+                            <span class="stock-status in-stock"><i class="fas fa-circle"></i> In Stock</span>
+                            <a href="tel:0470266582" class="btn-appliance-cta">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY BUY FROM US BANNER (60px Padding) -->
+    <section class="appliances-features-section">
+        <div class="container compact-container">
+            <div class="features-box">
+                <div class="features-header text-center">
+                    <span class="section-subtitle">Guaranteed Quality</span>
+                    <h2>Why Source Appliances From Chitwan Removal?</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-microscope"></i></div>
+                        <h4>Rigorous Testing</h4>
+                        <p>Every unit goes through full electrical safety checks and multi-cycle stress tests before hitting our store.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-pump-soap"></i></div>
+                        <h4>Deep Cleaning</h4>
+                        <p>Sanitized inside out using commercial grade cleaning agents so your appliance arrives spotless.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-truck-loading"></i></div>
+                        <h4>Direct Transit</h4>
+                        <p>No hassle with renting trailers—our moving fleet delivers and installs your appliance on your schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION BANNER (60px Padding) -->
+    <section class="appliances-cta-section">
+        <div class="container compact-container">
+            <div class="cta-banner">
+                <div class="cta-text-content">
+                    <h2>Looking for a Specific Appliance or Model?</h2>
+                    <p>Our stock changes weekly! Call our store hotline to verify available models, dimensions, and express delivery slots.</p>
+                </div>
+                <div class="cta-button-group">
+                    <a href="tel:0470266582" class="btn-primary-cta"><i class="fas fa-phone-alt"></i> Call 0470 266 582</a>
+                    <a href="{% url 'contact' %}" class="btn-secondary-cta">Request Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock %}
