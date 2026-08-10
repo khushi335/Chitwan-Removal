@@ -23,7 +23,7 @@
     <meta property="og:image" content="{% static 'images/logo_chitwan_removal.png' %}">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2.0">
     {% block extra_css %} {% endblock %}
     <link rel="stylesheet" href="{% static 'css/services.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -82,42 +82,57 @@
 
     <!-- BRAND AUTHENTIC FOOTER -->
     <footer class="main-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <img src="{% static 'images/logo_chitwan_removal.png' %}" alt="Chitwan Removal Trust Badge" class="footer-logo">
-                <p>Let us take the stress out of your next move. Providing premium, safe, reliable, and expert relocation services across state lines or right down the street.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="{% url 'index' %}">Home</a></li>
-                    <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="{% url 'services' %}">Our Services</a></li>
-                    <li><a href="{% url 'appliances' %}">Appliances Inventory</a></li>
-                    <li><a href="{% url 'contact' %}">Request Quote</a></li>
-                </ul>
-            </div>
-            <div class="footer-services">
-                <h3>Our Core Solutions</h3>
-                <ul>
-                    <li>Interstate Relocation</li>
-                    <li>Furniture Assembly Patterns</li>
-                    <li>Small Volume Pick & Drops</li>
-                    <li>Eco-Friendly Rubbish Removal</li>
-                    <li>Certified Second-Hand Goods</li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Details</h3>
-                <p><i class="fas fa-phone-alt"></i> 0470 266 582</p>
-                <p><i class="fas fa-envelope"></i> cnsgroup30@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> 22 Clarence St, Lidcombe</p>
-            </div>
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <img src="{% static 'images/logo_chitwan_removal.png' %}" alt="Chitwan Removal Trust Badge" class="footer-logo">
+            <p>Let us take the stress out of your next move. Providing premium, safe, reliable, and expert relocation services across state lines or right down the street.</p>
         </div>
-        <div class="footer-bottom text-center">
+        
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'services' %}">Our Services</a></li>
+                <li><a href="{% url 'appliances' %}">Appliances Inventory</a></li>
+                <li><a href="{% url 'contact' %}">Request Quote</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-services">
+            <h3>Our Core Solutions</h3>
+            <ul>
+                <li><i class="fas fa-angle-right"></i> Interstate Relocation</li>
+                <li><i class="fas fa-angle-right"></i> Furniture Assembly</li>
+                <li><i class="fas fa-angle-right"></i> Small Volume Pick & Drops</li>
+                <li><i class="fas fa-angle-right"></i> Eco-Friendly Rubbish Removal</li>
+                <li><i class="fas fa-angle-right"></i> Certified Second-Hand Goods</li>
+            </ul>
+        </div>
+        
+        <div class="footer-contact">
+            <h3>Contact Details</h3>
+            <a href="tel:0470266582" class="footer-contact-link">
+                <span class="icon-box"><i class="fas fa-phone-alt"></i></span> 
+                <span>0470 266 582</span>
+            </a>
+            <a href="mailto:cnsgroup30@gmail.com" class="footer-contact-link">
+                <span class="icon-box"><i class="fas fa-envelope"></i></span> 
+                <span>cnsgroup30@gmail.com</span>
+            </a>
+            <a href="https://maps.google.com/?q=22+Clarence+St,+Lidcombe" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+                <span class="icon-box"><i class="fas fa-map-marker-alt"></i></span> 
+                <span>22 Clarence St, Lidcombe</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="footer-bottom text-center">
+        <div class="container">
             <p>&copy; 2026 Chitwan Removal. All Rights Reserved.</p>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <!-- Scripts Execution Core -->
     <script src="{% static 'js/main.js' %}"></script>

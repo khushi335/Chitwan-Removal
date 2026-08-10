@@ -4,11 +4,11 @@
 {% block title %}Chitwan Removal | Premium Moving & Relocation Services Lidcombe{% endblock %}
 
 {% block content %}
-<!-- HERO SECTION WITH EXPANDED FULL-WIDTH CONTAINER -->
+<!-- HERO SECTION: MATCHING REMOVALIST NUMBER ONE STYLING -->
 <section id="home" class="hero-section">
     <div class="hero-container">
         
-        <!-- LEFT COLUMN: Brand Trust & SEO Info -->
+        <!-- LEFT COLUMN: Content & Trust Factors -->
         <div class="hero-text-content">
             <span class="hero-badge"><i class="fas fa-shield-alt"></i> Sydney's Premier Logistics Specialist</span>
             <h1>Let Us Take The Stress Out Of Your Next Move!</h1>
@@ -35,13 +35,33 @@
             </div>
         </div>
 
-        <!-- RIGHT COLUMN: Professional Quote Card -->
+        <!-- RIGHT COLUMN: Quote Form Card -->
         <div class="hero-form-wrapper">
             <div class="quote-card">
                 <div class="quote-card-header">
                     <h3>Get a Free Quote <span class="discount-badge">10% OFF</span></h3>
                     <p>Book online today and claim 10% off your moving services!</p>
                 </div>
+                
+                {% if messages %}
+                <div class="messages-container" style="max-width: 1200px; margin: 15px auto 0 auto; padding: 0 10px;">
+                    {% for message in messages %}
+                        {% if message.tags == 'success' %}
+                            <div style="padding: 12px 15px; border-radius: 6px; color: #0f5132; background-color: #d1e7dd; border: 1px solid #badbcc;">
+                                <i class="fas fa-check-circle"></i> {{ message }}
+                            </div>
+                        {% elif message.tags == 'warning' or message.tags == 'error' %}
+                            <div style="padding: 12px 15px; border-radius: 6px; color: #842029; background-color: #f8d7da; border: 1px solid #f5c2c7;">
+                                <i class="fas fa-exclamation-triangle"></i> {{ message }}
+                            </div>
+                        {% else %}
+                            <div style="padding: 12px 15px; border-radius: 6px; color: #055160; background-color: #cff4fc; border: 1px solid #b6effb;">
+                                <i class="fas fa-info-circle"></i> {{ message }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
 
                 <form method="POST" action="{% url 'index' %}" class="hero-quote-form">
                     {% csrf_token %}
@@ -155,9 +175,11 @@
     </div>
 </section>
 
+<!-- ABOUT US SECTION: DARK NAVY & MODERN ACCENT THEME -->
 <section id="about" class="about-section">
     <div class="container about-grid">
         
+        <!-- Left Column: Image Gallery & Floating Badge -->
         <div class="about-image-gallery">
             <div class="main-image-wrapper">
                 <img src="{% static 'images/logo_chitwan_removal.jpeg' %}" alt="Chitwan Removal Professional Operations Team" class="about-img-primary" loading="lazy">
@@ -168,6 +190,7 @@
             </div>
         </div>
 
+        <!-- Right Column: Content & Value Propositions -->
         <div class="about-text-content">
             <span class="section-sub-badge"><i class="fas fa-info-circle"></i> Who We Are</span>
             <h2>Dependable Relocation Specialists Serving Lidcombe & Beyond</h2>
@@ -200,7 +223,7 @@
             </div>
 
             <div class="about-action-row">
-                <a href="#quote" class="btn btn-primary text-uppercase">Book Our Team</a>
+                <a href="#home" class="btn-about-primary">Book Our Team <i class="fas fa-arrow-right"></i></a>
                 <a href="tel:0470266582" class="about-phone-link"><i class="fas fa-phone-alt"></i> 0470 266 582</a>
             </div>
         </div>
@@ -208,9 +231,11 @@
     </div>
 </section>
 
+<!-- SERVICES SECTION: DARK NAVY & ACCENT BLUE THEME -->
 <section id="services" class="services-home-section">
     <div class="container compact-services-container">
         
+        <!-- Main Section Header -->
         <div class="services-main-header text-center">
             <span class="services-tag-badge text-uppercase"><i class="fas fa-cubes"></i> Fleet Solutions</span>
             <h2>Our Professional Moving Solutions</h2>
@@ -218,8 +243,10 @@
             <p>Every operational branch is managed with absolute structural care, fully insured logistics rules, and direct damage-free guarantees.</p>
         </div>
 
+        <!-- 6-Card Services Grid -->
         <div class="services-cards-grid">
             
+            <!-- Card 1: Interstate Moves -->
             <div class="service-block-card">
                 <div class="service-card-media">
                     <img src="{% static 'images/interstate_moves.png' %}" alt="Interstate Moves Truck" loading="lazy">
@@ -227,13 +254,14 @@
                 <div class="service-card-content">
                     <h3><i class="fas fa-truck-moving"></i> Interstate Moves</h3>
                     <ul class="compact-bullet-list">
-                        <li><i class="fas fa-star"></i> Seamless long-distance relocation across state lines.</li>
-                        <li><i class="fas fa-star"></i> Expert packing and secure transit for peace of mind.</li>
-                        <li><i class="fas fa-star"></i> Timely delivery to your new destination, no matter the distance.</li>
+                        <li><i class="fas fa-check-circle"></i> Seamless long-distance relocation across state lines.</li>
+                        <li><i class="fas fa-check-circle"></i> Expert packing and secure transit for peace of mind.</li>
+                        <li><i class="fas fa-check-circle"></i> Timely delivery to your new destination, no matter the distance.</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Card 2: Furniture Assembly -->
             <div class="service-block-card">
                 <div class="service-card-media">
                     <img src="{% static 'images/furniture_assemble.png' %}" alt="Furniture Assembly Operations" loading="lazy">
@@ -241,13 +269,14 @@
                 <div class="service-card-content">
                     <h3><i class="fas fa-tools"></i> Furniture Assemble & Disassemble</h3>
                     <ul class="compact-bullet-list">
-                        <li><i class="fas fa-star"></i> Professional handling of complex furniture pieces.</li>
-                        <li><i class="fas fa-star"></i> Expert assembly and disassembly to save you time and effort.</li>
-                        <li><i class="fas fa-star"></i> Ensuring your furniture is set up correctly and safely in your new home.</li>
+                        <li><i class="fas fa-check-circle"></i> Professional handling of complex furniture pieces.</li>
+                        <li><i class="fas fa-check-circle"></i> Expert assembly and disassembly to save you time and effort.</li>
+                        <li><i class="fas fa-check-circle"></i> Ensuring your furniture is set up correctly and safely in your new home.</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Card 3: Small Pick & Drops -->
             <div class="service-block-card">
                 <div class="service-card-media">
                     <img src="{% static 'images/small_pick_drops.jpeg' %}" alt="Small Pick and Drops Van Delivery" loading="lazy">
@@ -255,13 +284,14 @@
                 <div class="service-card-content">
                     <h3><i class="fas fa-boxes"></i> Small Pick & Drops</h3>
                     <ul class="compact-bullet-list">
-                        <li><i class="fas fa-star"></i> Perfect for single items, store pickups, or small deliveries.</li>
-                        <li><i class="fas fa-star"></i> Flexible scheduling to fit your busy lifestyle.</li>
-                        <li><i class="fas fa-star"></i> Safe handling of your items from point A to point B.</li>
+                        <li><i class="fas fa-check-circle"></i> Perfect for single items, store pickups, or small deliveries.</li>
+                        <li><i class="fas fa-check-circle"></i> Flexible scheduling to fit your busy lifestyle.</li>
+                        <li><i class="fas fa-check-circle"></i> Safe handling of your items from point A to point B.</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Card 4: Rubbish Removal -->
             <div class="service-block-card">
                 <div class="service-card-media">
                     <img src="{% static 'images/rubbish_removal.jpeg' %}" alt="Eco Friendly Rubbish Removal" loading="lazy">
@@ -269,13 +299,14 @@
                 <div class="service-card-content">
                     <h3><i class="fas fa-trash-alt"></i> Rubbish Removal</h3>
                     <ul class="compact-bullet-list">
-                        <li><i class="fas fa-star"></i> Fast and responsible disposal of unwanted items and clutter.</li>
-                        <li><i class="fas fa-star"></i> Eco-friendly practices to minimize environmental impact.</li>
-                        <li><i class="fas fa-star"></i> Clear out your space with our hassle-free removal service.</li>
+                        <li><i class="fas fa-check-circle"></i> Fast and responsible disposal of unwanted items and clutter.</li>
+                        <li><i class="fas fa-check-circle"></i> Eco-friendly practices to minimize environmental impact.</li>
+                        <li><i class="fas fa-check-circle"></i> Clear out your space with our hassle-free removal service.</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Card 5: Second-Hand Appliances (Highlight Border) -->
             <div class="service-block-card highlight-border">
                 <div class="service-card-media">
                     <img src="{% static 'images/second_hand_appliance.png' %}" alt="Quality Used Household Appliances" loading="lazy">
@@ -284,13 +315,14 @@
                     <h3><i class="fas fa-blender"></i> Second-Hand Appliances</h3>
                     <div class="trust-tagline">Quality You Can Trust</div>
                     <ul class="compact-bullet-list">
-                        <li><i class="fas fa-star"></i> Verified, rigorously tested whitegoods, fridges, and washers.</li>
-                        <li><i class="fas fa-star"></i> High-grade performance paired with deep cost savings.</li>
-                        <li><i class="fas fa-star"></i> Prompt home delivery and setup through our fleet lines.</li>
+                        <li><i class="fas fa-check-circle"></i> Verified, rigorously tested whitegoods, fridges, and washers.</li>
+                        <li><i class="fas fa-check-circle"></i> High-grade performance paired with deep cost savings.</li>
+                        <li><i class="fas fa-check-circle"></i> Prompt home delivery and setup through our fleet lines.</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Card 6: Commercial Moves -->
             <div class="service-block-card">
                 <div class="service-card-media">
                     <img src="{% static 'images/Dynamic_Fleet_Truck_Hauling_Cargo.png' %}" alt="Commercial Office Relocations" loading="lazy">
@@ -298,9 +330,9 @@
                 <div class="service-card-content">
                     <h3><i class="fas fa-building"></i> Commercial Moves</h3>
                     <ul class="compact-bullet-list">
-                        <li><i class="fas fa-star"></i> Fast corporate transitions minimizing business operational downtime.</li>
-                        <li><i class="fas fa-star"></i> Specialized protective loading protocols for electronics and files.</li>
-                        <li><i class="fas fa-star"></i> Fully coordinated site clearing and streamlined layout setting.</li>
+                        <li><i class="fas fa-check-circle"></i> Fast corporate transitions minimizing business operational downtime.</li>
+                        <li><i class="fas fa-check-circle"></i> Specialized protective loading protocols for electronics and files.</li>
+                        <li><i class="fas fa-check-circle"></i> Fully coordinated site clearing and streamlined layout setting.</li>
                     </ul>
                 </div>
             </div>
@@ -308,7 +340,7 @@
         </div>
 
         <div class="services-footer-cta text-center">
-            <a href="#quote" class="btn btn-primary text-uppercase">Book Our Team Today</a>
+            <a href="#quote" class="btn-services-primary text-uppercase">Book Our Team Today <i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
 </section>
@@ -592,48 +624,207 @@
 
 <!-- CONVERSION OPTIMISED FORMS ENGINE -->
 <section id="quote" class="quote-section">
-    <div class="container dynamic-form-container">
-        <div class="text-center section-header">
-            <h2 class="text-white">Get A Quote Today!</h2>
-            <div class="gold-divider"></div>
-            <p class="text-gray-light">Share your moving details below to get an instant, customized price estimate.</p>
-        </div>
+    <div class="quote-container">
         
-        <form class="booking-form" method="POST" action="">
-            {% csrf_token %}
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="name">Your Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Contact Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="0470 266 582" required>
+        <!-- LEFT COLUMN: Contact & Operations Info -->
+        <div class="contact-info-card">
+            <div class="contact-card-header">
+                <span class="section-badge"><i class="fas fa-headset"></i> We're Here To Help</span>
+                <h2>Get In Touch With Our Team</h2>
+                <div class="gold-divider-left"></div>
+                <p>Have questions about your upcoming move or need a custom quote? Reach out to our Lidcombe dispatch team directly.</p>
+            </div>
+
+            <!-- Direct Contact List -->
+            <div class="contact-details-list">
+                <a href="tel:0470266582" class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <span class="label">Direct Dispatch Line</span>
+                        <span class="value">0470 266 582</span>
+                    </div>
+                </a>
+
+                <a href="mailto:cnsgroup30@gmail.com" class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <span class="label">Email Inquiry</span>
+                        <span class="value">cnsgroup30@gmail.com</span>
+                    </div>
+                </a>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <span class="label">Central Depot Location</span>
+                        <span class="value">22 Clarence St, Lidcombe</span>
+                    </div>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="cnsgroup30@gmail.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="service_type">Select Service Pattern</label>
-                    <select id="service_type" name="service_type" required>
-                        <option value="" disabled selected>Choose operations branch...</option>
-                        <option value="interstate">Interstate Move</option>
-                        <option value="furniture">Furniture Assemble / Disassemble</option>
-                        <option value="pick_drop">Small Pick and Drops</option>
-                        <option value="rubbish">Rubbish Removal</option>
-                        <option value="appliances">Second-Hand Appliances Procurement</option>
-                    </select>
+
+            <!-- Operating Highlight Box -->
+            <div class="depot-trust-box">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <strong>Rapid Dispatch Guarantee</strong>
+                    <p>Same-day and emergency bookings available across Sydney metropolitan areas.</p>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="message">Move Details (Include item counts, volume layout, and location access notes)</label>
-                <textarea id="message" name="message" rows="4" placeholder="List key inventory details here..." required></textarea>
+
+            <!-- Social Media Channels -->
+            <!--<div class="social-links-wrapper">-->
+            <!--    <span class="social-title">Connect With Us:</span>-->
+            <!--    <div class="social-icons">-->
+            <!--        <a href="#" class="social-btn brand-fb" aria-label="Facebook" target="_blank" rel="noopener">-->
+            <!--            <i class="fab fa-facebook-f"></i>-->
+            <!--        </a>-->
+            <!--        <a href="#" class="social-btn brand-insta" aria-label="Instagram" target="_blank" rel="noopener">-->
+            <!--            <i class="fab fa-instagram"></i>-->
+            <!--        </a>-->
+            <!--        <a href="#" class="social-btn brand-tiktok" aria-label="TikTok" target="_blank" rel="noopener">-->
+            <!--            <i class="fab fa-tiktok"></i>-->
+            <!--        </a>-->
+            <!--        <a href="https://wa.me/0470266582" class="social-btn brand-whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener">-->
+            <!--            <i class="fab fa-whatsapp"></i>-->
+            <!--        </a>-->
+            <!--    </div>-->
+            <!--</div>-->
+        </div>
+
+        <!-- RIGHT COLUMN: Interactive Quote Form -->
+        <div class="booking-form-wrapper">
+            
+            {% if messages %}
+                <div class="form-messages-wrapper">
+                    {% for message in messages %}
+                        <div class="form-alert alert-{{ message.tags }}">
+                            <i class="fas fa-check-circle"></i>
+                            <span>{{ message }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <div class="form-header">
+                <h3>Request A Free Quote <span class="discount-pill">10% OFF</span></h3>
+                <p>Fill out the operational details below to receive an instant price estimate.</p>
             </div>
-            <button type="submit" class="btn btn-accent text-uppercase font-weight-bold">Submit Now</button>
-        </form>
+
+            <form class="booking-form" method="POST" action="{% url 'index' %}">
+                {% csrf_token %}
+                <input type="hidden" name="form_type" value="hero_quote">
+
+                <!-- Row 1: Full Name & Phone -->
+                <div class="form-row-2col">
+                    <div class="form-group">
+                        <label for="quote_full_name">Full Name <span class="req">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="quote_full_name" name="full_name" placeholder="John Doe" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote_phone">Phone Number <span class="req">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone input-icon"></i>
+                            <input type="tel" id="quote_phone" name="phone" placeholder="0470 266 582" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Email & Service Type -->
+                <div class="form-row-2col">
+                    <div class="form-group">
+                        <label for="quote_email">Email Address <span class="req">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" id="quote_email" name="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote_service_type">Required Service <span class="req">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-truck-moving input-icon"></i>
+                            <select id="quote_service_type" name="service_type" required>
+                                <option value="" disabled selected>Select service pattern...</option>
+                                <option value="House Removal">House Removal</option>
+                                <option value="Interstate Move">Interstate Move</option>
+                                <option value="Office Relocation">Office Relocation</option>
+                                <option value="Small Pick & Drop">Small Pick & Drop</option>
+                                <option value="Furniture Assembly">Furniture Assembly</option>
+                                <option value="Rubbish Removal">Rubbish Removal</option>
+                                <option value="Second Hand Appliances">Second-Hand Appliances</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Pickup & Dropoff Suburbs -->
+                <div class="form-row-2col">
+                    <div class="form-group">
+                        <label for="quote_pickup_location">Pick-up Suburb <span class="req">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-map-marker-alt input-icon"></i>
+                            <input type="text" id="quote_pickup_location" name="pickup_location" placeholder="e.g. Lidcombe" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote_dropoff_location">Drop-off Suburb <span class="req">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-flag-checkered input-icon"></i>
+                            <input type="text" id="quote_dropoff_location" name="dropoff_location" placeholder="e.g. Parramatta" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4: Move Size, Date, & Time -->
+                <div class="form-row-3col">
+                    <div class="form-group">
+                        <label for="quote_move_size">Move Size</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-boxes input-icon"></i>
+                            <select id="quote_move_size" name="move_size" required>
+                                <option value="Single Item / Few Items">Single Item</option>
+                                <option value="1 Bedroom Apartment">1 Bed Apt</option>
+                                <option value="2 Bedroom Apartment / House">2 Bed Apt/House</option>
+                                <option value="3+ Bedroom House">3+ Bed House</option>
+                                <option value="Office / Commercial">Office/Commercial</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote_move_date">Moving Date <span class="req">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-calendar-alt input-icon"></i>
+                            <input type="date" id="quote_move_date" name="move_date" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote_move_time">Preferred Time <span class="req">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-clock input-icon"></i>
+                            <input type="time" id="quote_move_time" name="move_time" required>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-quote-btn">
+                    <span>Submit Quote Request</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+
+                <div class="form-footer-note">
+                    <i class="fas fa-lock"></i> Strict privacy policy. We never share your contact details.
+                </div>
+            </form>
+        </div>
+
     </div>
 </section>
 {% endblock %}
