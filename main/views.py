@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.contrib import messages
 from .models import QuoteRequest
+from datetime import datetime
 
 # Create your views here.
 
@@ -17,11 +18,11 @@ def index(request):
             pickup = request.POST.get("pickup_location")
             dropoff = request.POST.get("dropoff_location")
             move_size = request.POST.get("move_size")
-            move_date = request.POST.get("move_date")
-            move_time = request.POST.get("move_time")
+            move_date_raw = request.POST.get("move_date")
+            move_time_raw = request.POST.get("move_time")
 
-            # 1. Save to Database (Admin Panel)
-            quote = QuoteRequest.objects.create(
+            # 1. Save entry to Database
+            QuoteRequest.objects.create(
                 full_name=full_name,
                 phone=phone,
                 email=email,
@@ -29,15 +30,26 @@ def index(request):
                 pickup_location=pickup,
                 dropoff_location=dropoff,
                 move_size=move_size,
-                move_date=move_date if move_date else None,
-                move_time=move_time if move_time else None
+                move_date=move_date_raw if move_date_raw else None,
+                move_time=move_time_raw if move_time_raw else None,
             )
 
-            # Format Date/Time Display for Emails
-            formatted_date = quote.move_date.strftime("%B %d, %Y") if quote.move_date else "N/A"
-            formatted_time = quote.move_time.strftime("%I:%M %p") if quote.move_time else "N/A"
+            # Format Date and Time safely for HTML emails
+            formatted_date = "N/A"
+            if move_date_raw:
+                try:
+                    formatted_date = datetime.strptime(move_date_raw, "%Y-%m-%d").strftime("%B %d, %Y")
+                except ValueError:
+                    formatted_date = move_date_raw
 
-            # 2. HTML Email Template for Admin Notification
+            formatted_time = "N/A"
+            if move_time_raw:
+                try:
+                    formatted_time = datetime.strptime(move_time_raw, "%H:%M").strftime("%I:%M %p")
+                except ValueError:
+                    formatted_time = move_time_raw
+
+            # 2. HTML Email for Admin Notification
             admin_html = f"""
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden;">
                 <div style="background-color: #0F4C2A; padding: 20px; text-align: center;">
@@ -62,7 +74,7 @@ def index(request):
             </div>
             """
 
-            # 3. HTML Email Template for Customer Confirmation
+            # 3. HTML Email for Customer Confirmation
             customer_html = f"""
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden;">
                 <div style="background-color: #0F4C2A; padding: 24px; text-align: center;">
@@ -94,29 +106,37 @@ def index(request):
             """
 
             try:
-                # Dispatch Admin Email
+                # Send email to Admin
                 send_mail(
-                    subject=f"[Hero Quote] New Request from {full_name}",
+                    subject=f"[Quote Request] New Inquiry from {full_name}",
                     message=f"New Quote Request from {full_name}. Please view in HTML.",
-                    from_email='cnsgroup30@gmail.com',
-                    recipient_list=['cnsgroup30@gmail.com'],
-                    html_message=admin_html
+                    from_email="cnsgroup30@gmail.com",
+                    recipient_list=["cnsgroup30@gmail.com"],
+                    html_message=admin_html,
+                    fail_silently=False,
                 )
 
-                # Dispatch Customer Email
+                # Send email to Customer
                 send_mail(
                     subject="We Received Your Quote Request - Chitwan Removal & Logistics",
                     message=f"Hi {full_name}, thank you for your quote request. We will contact you shortly.",
-                    from_email='cnsgroup30@gmail.com',
+                    from_email="cnsgroup30@gmail.com",
                     recipient_list=[email],
-                    html_message=customer_html
+                    html_message=customer_html,
+                    fail_silently=False,
                 )
 
-                messages.success(request, "Your quote request has been submitted! Check your email for confirmation.")
-            except Exception as e:
-                messages.error(request, "There was an issue sending your confirmation email, but your quote was saved.")
+                messages.success(
+                    request,
+                    "Your quote request has been submitted successfully! Check your email for confirmation.",
+                )
+            except Exception:
+                messages.warning(
+                    request,
+                    "Your quote request was saved, but there was an issue sending the confirmation email.",
+                )
 
-            return redirect('index')
+            return redirect("index")
 
     return render(request, "main/index.html")
 
