@@ -4,21 +4,154 @@
 {% block title %}Chitwan Removal | Premium Moving & Relocation Services Lidcombe{% endblock %}
 
 {% block content %}
-<!-- PREMIUM HERO INTRO ZONE -->
+<!-- HERO SECTION WITH EXPANDED FULL-WIDTH CONTAINER -->
 <section id="home" class="hero-section">
-    <div class="container hero-grid">
+    <div class="hero-container">
+        
+        <!-- LEFT COLUMN: Brand Trust & SEO Info -->
         <div class="hero-text-content">
             <span class="hero-badge"><i class="fas fa-shield-alt"></i> Sydney's Premier Logistics Specialist</span>
             <h1>Let Us Take The Stress Out Of Your Next Move!</h1>
-            <p>From comprehensive interstate transitions to micro single-item transport, our experienced operations team ensures your assets arrive securely and precisely on schedule.</p>
-            <div class="hero-cta-group">
-                <a href="#quote" class="btn btn-primary text-uppercase">Get A Quote Today!</a>
-                <a href="tel:0470266582" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Call Now</a>
+            <p>Reliable removalists based at <strong>22 Clarence Street, Lidcombe</strong>. From interstate transitions to micro single-item transport, our team ensures fast, insured, and affordable removals across Sydney.</p>
+            
+            <div class="hero-trust-features">
+                <div class="trust-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Depot Location: 22 Clarence Street, Lidcombe</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Fully Insured Fleet & Professional Movers</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Transparent Rates with Zero Hidden Fees</span>
+                </div>
+            </div>
+
+            <div class="hero-direct-call">
+                <span>Direct Dispatch Line:</span>
+                <a href="tel:0470266582" class="hero-phone-link"><i class="fas fa-phone-alt"></i> 0470 266 582</a>
             </div>
         </div>
-        <div class="hero-image-wrapper">
-            <img src="{% static 'images/Dynamic_Fleet_Truck_Hauling_Cargo.png' %}" alt="Chitwan Removal Fleet Truck Transporting Goods" class="hero-img" width="600" height="400">
+
+        <!-- RIGHT COLUMN: Professional Quote Card -->
+        <div class="hero-form-wrapper">
+            <div class="quote-card">
+                <div class="quote-card-header">
+                    <h3>Get a Free Quote <span class="discount-badge">10% OFF</span></h3>
+                    <p>Book online today and claim 10% off your moving services!</p>
+                </div>
+
+                <form method="POST" action="{% url 'index' %}" class="hero-quote-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="hero_quote">
+
+                    <!-- Row 1: Name & Phone -->
+                    <div class="form-row-2col">
+                        <div class="form-field">
+                            <label for="hero_full_name">Full Name <span class="req">*</span></label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" name="full_name" id="hero_full_name" placeholder="John Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="hero_phone">Phone Number <span class="req">*</span></label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" name="phone" id="hero_phone" placeholder="0470 266 582" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Email & Service -->
+                    <div class="form-row-2col">
+                        <div class="form-field">
+                            <label for="hero_email">Email Address <span class="req">*</span></label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" name="email" id="hero_email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="hero_service_type">Service Required</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-truck-moving"></i>
+                                <select name="service_type" id="hero_service_type">
+                                    <option value="House Removal">House Removal</option>
+                                    <option value="Interstate Move">Interstate Move</option>
+                                    <option value="Office Relocation">Office Relocation</option>
+                                    <option value="Small Pick & Drop">Small Pick & Drop</option>
+                                    <option value="Furniture Assembly">Furniture Assembly</option>
+                                    <option value="Rubbish Removal">Rubbish Removal</option>
+                                    <option value="Second Hand Appliances">Second-Hand Appliances</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Pickup Suburb & Dropoff Suburb -->
+                    <div class="form-row-2col">
+                        <div class="form-field">
+                            <label for="hero_pickup">Pick-up Suburb <span class="req">*</span></label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" name="pickup_location" id="hero_pickup" placeholder="e.g. Lidcombe" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="hero_dropoff">Drop-off Suburb <span class="req">*</span></label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-flag-checkered"></i>
+                                <input type="text" name="dropoff_location" id="hero_dropoff" placeholder="e.g. Parramatta" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Move Size, Date Picker, Time Picker -->
+                    <div class="form-row-3col">
+                        <div class="form-field">
+                            <label for="hero_move_size">Move Size</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-boxes"></i>
+                                <select name="move_size" id="hero_move_size">
+                                    <option value="Single Item / Few Items">Single Item</option>
+                                    <option value="1 Bedroom Apartment">1 Bed Apt</option>
+                                    <option value="2 Bedroom Apartment / House">2 Bed Apt/House</option>
+                                    <option value="3+ Bedroom House">3+ Bed House</option>
+                                    <option value="Office / Commercial">Office/Commercial</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="hero_move_date">Moving Date <span class="req">*</span></label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                                <input type="date" name="move_date" id="hero_move_date" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="hero_move_time">Preferred Time <span class="req">*</span></label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-clock"></i>
+                                <input type="time" name="move_time" id="hero_move_time" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-quote-submit">
+                        <span>Claim 10% Off & Get Instant Quote</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+
+                    <div class="form-guarantee">
+                        <i class="fas fa-lock"></i> Your information is kept strictly private and safe.
+                    </div>
+                </form>
+            </div>
         </div>
+
     </div>
 </section>
 
