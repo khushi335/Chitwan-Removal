@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-tq1wzon)60$i*+#j@p+i5!7e1*++hmia9f(fn5o6-%=ozn07di
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['chitwanremoval.com.au','www.chitwanremoval.com.au']
 
 
 # Application definition
