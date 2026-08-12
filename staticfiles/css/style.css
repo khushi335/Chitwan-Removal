@@ -1,25 +1,27 @@
 /* ==========================================================================
-   GLOBAL DESIGN VARIABLES & TOKEN SYSTEM
+   STRICT TWO-COLOR PALETTE SYSTEM (#041D56 & PURE WHITE)
    ========================================================================== */
 :root {
-    --tru-navy: #0b1a30;
-    --tru-blue: #3b82f6;
-    --tru-blue-hover: #0066ff;
-    --tru-amber: #f59e0b;
-    --tru-dark: #0b1a30;
-    --tru-text: #475569;
-    --tru-bg: #f8fafc;
-    --tru-card-bg: #ffffff;
-    --tru-border: #e2e8f0;
+    /* Pure Dual Color Palette */
+    --brand-navy: #041D56;
+    --brand-navy-hover: #072b7a;
+    --brand-navy-light: #f2f5fa; /* 2% Tint for clean background separation */
+    --clr-white: #ffffff;
+    
+    /* Muted Text Shades derived from Navy */
+    --clr-text-main: #041D56;
+    --clr-text-muted: #536387;
+    --clr-border: #e2e8f0;
 
-    /* Architectural Utilities mapped to token system */
+    /* Architecture Tokens */
     --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    --border-radius-modern: 12px;
-    --shadow-depth: 0 15px 35px rgba(11, 26, 48, 0.05);
+    --border-radius-modern: 10px;
+    --shadow-subtle: 0 10px 30px rgba(4, 29, 86, 0.08);
+    --shadow-elevated: 0 20px 40px rgba(4, 29, 86, 0.15);
 }
 
 /* ==========================================================================
-   BASE OPTIMIZATION CORE
+   BASE RESET & LAYOUT CORE
    ========================================================================== */
 * {
     box-sizing: border-box;
@@ -30,12 +32,12 @@
 html {
     scroll-behavior: smooth;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    color: var(--tru-text);
+    color: var(--clr-text-main);
     line-height: 1.5;
 }
 
 body {
-    background-color: var(--tru-card-bg);
+    background-color: var(--clr-white);
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -48,18 +50,15 @@ body {
     padding: 0 24px;
 }
 
-/* Typography Utility Modifiers */
+/* Typography Utilities */
 h1, h2, h3, h4 {
-    color: var(--tru-dark);
+    color: var(--brand-navy);
     font-weight: 700;
     line-height: 1.25;
 }
 
 .text-center { text-align: center; }
-.text-white { color: #ffffff !important; }
-.text-gray-light { color: var(--tru-border) !important; }
-.text-uppercase { text-transform: uppercase; letter-spacing: 1.5px; }
-.font-weight-bold { font-weight: 700; }
+.text-white { color: var(--clr-white) !important; }
 
 /* ==========================================================================
    HEADER & NAVBAR ARCHITECTURE
@@ -68,17 +67,18 @@ h1, h2, h3, h4 {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 25px rgba(11, 26, 48, 0.08);
+    box-shadow: var(--shadow-subtle);
 }
 
 /* --------------------------------------------------------------------------
-   TOPBAR
+   1. TOPBAR MODULE
    -------------------------------------------------------------------------- */
 .topbar {
-    background-color: var(--tru-navy);
-    color: #ffffff;
+    background-color: var(--brand-navy);
+    color: var(--clr-white);
     padding: 10px 0;
     font-size: 13.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .topbar-wrapper {
@@ -87,57 +87,75 @@ h1, h2, h3, h4 {
     align-items: center;
 }
 
+.topbar-info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
 .topbar-info a, 
 .topbar-info span {
-    color: var(--tru-bg);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    margin-right: 24px;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     transition: var(--transition-smooth);
 }
 
 .topbar-info a:hover {
-    color: var(--tru-amber);
+    color: var(--clr-white);
+    transform: translateY(-1px);
 }
 
 .topbar-info i {
-    color: var(--tru-amber);
-    margin-right: 8px;
+    color: var(--clr-white);
+    opacity: 0.8;
 }
 
-/* Topbar Social Icons */
-.topbar-socials a {
-    margin-left: 16px;
-    font-size: 15px;
+.topbar-socials {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.topbar-socials .social-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--clr-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    text-decoration: none;
     transition: var(--transition-smooth);
-    display: inline-block;
 }
 
-.brand-fb { color: #1877F2 !important; }
-.brand-insta { color: #E4405F !important; }
-.brand-tiktok { color: #ffffff !important; }
-.brand-whatsapp { color: #25D366 !important; }
-
-.topbar-socials a:hover {
-    transform: scale(1.2);
+.topbar-socials .social-icon:hover {
+    background-color: var(--clr-white);
+    color: var(--brand-navy);
+    transform: scale(1.1);
 }
 
 /* --------------------------------------------------------------------------
-   NAVBAR & LOGO INTEGRATION
+   2. MAIN NAVBAR & LOGO INTEGRATION
    -------------------------------------------------------------------------- */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.97);
+    background-color: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 0;
-    border-bottom: 1px solid var(--tru-border);
+    border-bottom: 1px solid var(--clr-border);
 }
 
 .navbar-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 95px;
+    height: 90px;
+    position: relative;
 }
 
 .logo-brand {
@@ -145,93 +163,94 @@ h1, h2, h3, h4 {
     align-items: center;
     height: 100%;
     text-decoration: none;
-    background: transparent !important;
 }
 
 .nav-logo {
-    height: 85px;
+    height: 75px;
     width: auto;
     object-fit: contain;
     display: block;
-    background: transparent !important;
-    background-color: transparent !important;
-    padding: 0 !important;
-    margin: 0;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
     transition: var(--transition-smooth);
     transform-origin: left center;
 }
 
 .logo-brand:hover .nav-logo {
-    transform: scale(1.06);
-    box-shadow: none !important;
+    transform: scale(1.05);
 }
 
+/* Navigation Links */
 .nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
+    gap: 8px;
 }
 
 .nav-link {
-    color: var(--tru-dark);
+    color: var(--brand-navy);
     text-decoration: none;
     font-weight: 600;
-    font-size: 16px;
-    padding: 10px 20px;
+    font-size: 15.5px;
+    padding: 10px 18px;
+    border-radius: 6px;
     transition: var(--transition-smooth);
 }
 
 .nav-link:hover {
-    color: var(--tru-blue);
+    background-color: var(--brand-navy-light);
 }
 
+/* Primary Action Button (White Text on Navy) */
 .nav-btn {
-    background-color: var(--tru-blue);
-    color: #ffffff;
+    background-color: var(--brand-navy);
+    color: var(--clr-white) !important;
     text-decoration: none;
     font-weight: 700;
     font-size: 15px;
-    padding: 14px 28px;
+    padding: 12px 26px;
     border-radius: var(--border-radius-modern);
+    border: 2px solid var(--brand-navy);
     transition: var(--transition-smooth);
-    margin-left: 16px;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+    margin-left: 10px;
+    box-shadow: 0 4px 14px rgba(4, 29, 86, 0.2);
 }
 
 .nav-btn:hover {
-    background-color: var(--tru-blue-hover);
-    box-shadow: 0 6px 20px rgba(0, 102, 255, 0.35);
+    background-color: var(--brand-navy-hover);
+    border-color: var(--brand-navy-hover);
+    box-shadow: 0 8px 22px rgba(4, 29, 86, 0.3);
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   RESPONSIVE HEADER OVERRIDES
-   ========================================================================== */
-@media (max-width: 768px) {
-    .topbar { 
-        display: none; 
-    }
+/* Mobile Hamburger Checkbox Switch (CSS-Only Drawer Trigger) */
+.nav-toggle-input {
+    display: none;
+}
 
-    .navbar-wrapper { 
-        height: 85px; 
-    }
+.mobile-toggle-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    background-color: var(--brand-navy-light);
+}
 
-    .nav-logo { 
-        height: 75px; 
-    }
-
-    .nav-menu { 
-        display: none; 
-    }
+.hamburger-bar {
+    width: 100%;
+    height: 2.5px;
+    background-color: var(--brand-navy);
+    border-radius: 2px;
+    transition: var(--transition-smooth);
 }
 
 /* ==========================================================================
-   STICKY FLOATING SOCIAL DOCK
+   3. STICKY FLOATING SOCIAL DOCK
    ========================================================================== */
-
 .sticky-social-dock {
     position: fixed;
     left: 0;
@@ -240,9 +259,12 @@ h1, h2, h3, h4 {
     z-index: 999;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 10px 25px rgba(11, 26, 48, 0.15);
-    border-top-right-radius: var(--border-radius-modern, 12px);
-    border-bottom-right-radius: var(--border-radius-modern, 12px);
+    background-color: var(--brand-navy);
+    box-shadow: var(--shadow-elevated);
+    border-top-right-radius: var(--border-radius-modern);
+    border-bottom-right-radius: var(--border-radius-modern);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: none;
     overflow: hidden;
 }
 
@@ -252,27 +274,103 @@ h1, h2, h3, h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff !important;
+    color: var(--clr-white) !important;
     text-decoration: none;
-    font-size: 20px;
-    transition: var(--transition-smooth, all 0.35s cubic-bezier(0.4, 0, 0.2, 1));
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition-smooth);
+}
+
+.dock-item:last-child {
+    border-bottom: none;
 }
 
 .dock-item:hover {
     width: 58px;
-    padding-left: 10px;
+    background-color: var(--clr-white);
+    color: var(--brand-navy) !important;
+    padding-left: 6px;
 }
 
-/* Brand Colors */
-.dock-item.wa { background-color: #25D366; }
-.dock-item.fb { background-color: #1877F2; }
-.dock-item.tt { background-color: var(--tru-dark, #0b1a30); }
-.dock-item.ig { background-color: #E4405F; }
+/* ==========================================================================
+   RESPONSIVE LAYOUT ENGINE (TABLETS & MOBILE)
+   ========================================================================== */
 
-/* Responsive Hide for Mobile Viewports */
+@media (max-width: 992px) {
+    .topbar-info span {
+        display: none; /* Hide address on medium screens to keep topbar clean */
+    }
+}
+
 @media (max-width: 768px) {
+    /* Hide topbar and side dock on smaller dynamic screens */
+    .topbar,
     .sticky-social-dock {
         display: none;
+    }
+
+    .navbar-wrapper {
+        height: 75px;
+    }
+
+    .nav-logo {
+        height: 60px;
+    }
+
+    /* Mobile Hamburger Display */
+    .mobile-toggle-btn {
+        display: flex;
+    }
+
+    /* Mobile Drawer Menu Overlap */
+    .nav-menu {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background-color: var(--clr-white);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px 24px 30px 24px;
+        gap: 12px;
+        border-bottom: 2px solid var(--brand-navy);
+        box-shadow: var(--shadow-elevated);
+        display: none; /* Collapsed state */
+    }
+
+    .nav-link {
+        padding: 14px 16px;
+        font-size: 16px;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+    }
+
+    .nav-link:hover {
+        border-left-color: var(--brand-navy);
+    }
+
+    .nav-btn {
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+        padding: 14px 20px;
+    }
+
+    /* Toggle Logic via CSS */
+    .nav-toggle-input:checked ~ .nav-menu {
+        display: flex;
+    }
+
+    .nav-toggle-input:checked ~ .mobile-toggle-btn .hamburger-bar:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .nav-toggle-input:checked ~ .mobile-toggle-btn .hamburger-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle-input:checked ~ .mobile-toggle-btn .hamburger-bar:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
     }
 }
 
@@ -2557,14 +2655,14 @@ a.contact-item:hover {
 }
 
 /* ==========================================================================
-   MODERN HIGH-END FOOTER STYLES
+   MODERN DUAL-COLOR FOOTER STYLES (#041D56 & WHITE)
    ========================================================================== */
 
 .main-footer {
-    background-color: var(--tru-navy);
-    color: var(--tru-bg);
+    background-color: var(--brand-navy, #041D56);
+    color: var(--clr-white, #ffffff);
     padding: 80px 0 30px 0;
-    border-top: 4px solid var(--tru-amber);
+    border-top: 4px solid rgba(255, 255, 255, 0.2);
     position: relative;
 }
 
@@ -2588,13 +2686,12 @@ a.contact-item:hover {
 .footer-brand p {
     font-size: 14px;
     line-height: 1.65;
-    color: var(--tru-bg);
-    opacity: 0.85;
+    color: rgba(255, 255, 255, 0.85);
 }
 
-/* Headings with Modern Amber Accent Bar */
+/* Headings with Modern Pure White Accent Bar */
 .footer-grid h3 {
-    color: #ffffff;
+    color: var(--clr-white, #ffffff);
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 22px;
@@ -2609,11 +2706,11 @@ a.contact-item:hover {
     left: 0;
     width: 35px;
     height: 3px;
-    background-color: var(--tru-amber);
+    background-color: var(--clr-white, #ffffff);
     border-radius: 2px;
 }
 
-/* Link Lists */
+/* Link & Service Lists */
 .footer-links ul, 
 .footer-services ul {
     list-style: none;
@@ -2625,29 +2722,27 @@ a.contact-item:hover {
 .footer-services li {
     margin-bottom: 12px;
     font-size: 14.5px;
-    color: var(--tru-bg);
-    opacity: 0.85;
+    color: rgba(255, 255, 255, 0.85);
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .footer-services li i {
-    color: var(--tru-amber);
+    color: var(--clr-white, #ffffff);
+    opacity: 0.7;
     font-size: 12px;
 }
 
 .footer-links a {
-    color: var(--tru-bg);
-    opacity: 0.85;
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: var(--transition-smooth, all 0.35s ease);
     display: inline-block;
 }
 
 .footer-links a:hover {
-    color: var(--tru-amber);
-    opacity: 1;
+    color: var(--clr-white, #ffffff);
     transform: translateX(5px);
 }
 
@@ -2661,39 +2756,37 @@ a.contact-item:hover {
     display: flex;
     align-items: center;
     gap: 14px;
-    color: var(--tru-bg);
-    opacity: 0.88;
+    color: rgba(255, 255, 255, 0.88);
     text-decoration: none;
     margin-bottom: 14px;
     font-size: 14.5px;
-    transition: all 0.3s ease;
+    transition: var(--transition-smooth, all 0.35s ease);
 }
 
 .footer-contact-link:hover {
-    opacity: 1;
-    color: #ffffff;
+    color: var(--clr-white, #ffffff);
     transform: translateX(3px);
 }
 
 .footer-contact-link .icon-box {
     width: 36px;
     height: 36px;
-    background-color: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--border-radius-modern, 10px);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--tru-amber);
+    color: var(--clr-white, #ffffff);
     font-size: 14px;
     flex-shrink: 0;
-    transition: all 0.3s ease;
+    transition: var(--transition-smooth, all 0.35s ease);
 }
 
 .footer-contact-link:hover .icon-box {
-    background-color: var(--tru-amber);
-    color: var(--tru-dark);
-    border-color: var(--tru-amber);
+    background-color: var(--clr-white, #ffffff);
+    color: var(--brand-navy, #041D56);
+    border-color: var(--clr-white, #ffffff);
 }
 
 /* Bottom Bar */
@@ -2701,12 +2794,11 @@ a.contact-item:hover {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 25px;
     font-size: 13.5px;
-    color: var(--tru-bg);
-    opacity: 0.75;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN OVERRIDES
    ========================================================================== */
 
 @media (max-width: 1024px) {
