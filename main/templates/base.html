@@ -31,48 +31,58 @@
 <body>
 
     <!-- STICKY HEADER AND NAVIGATION CONTAINER -->
-    <header class="sticky-header">
-        <!-- Topbar -->
-        <div class="topbar">
-            <div class="container topbar-wrapper">
-                <div class="topbar-info">
-                    <a href="tel:0470266582"><i class="fas fa-phone-alt"></i> 0470 266 582</a>
-                    <a href="mailto:cnsgroup30@gmail.com"><i class="fas fa-envelope"></i> cnsgroup30@gmail.com</a>
-                    <span><i class="fas fa-map-marker-alt"></i> 22 Clarence Street, Lidcombe</span>
-                </div>
-                <div class="topbar-socials">
-                    <a href="#" class="brand-fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="brand-insta" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="brand-tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://wa.me/0470266582" class="brand-whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                </div>
+<header class="sticky-header">
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container topbar-wrapper">
+            <div class="topbar-info">
+                <a href="tel:0470266582"><i class="fas fa-phone-alt"></i> 0470 266 582</a>
+                <a href="mailto:cnsgroup30@gmail.com"><i class="fas fa-envelope"></i> cnsgroup30@gmail.com</a>
+                <span><i class="fas fa-map-marker-alt"></i> 22 Clarence Street, Lidcombe</span>
+            </div>
+            <div class="topbar-socials">
+                <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/0470266582" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
-
-        <!-- Enhanced High-Visibility Navbar -->
-        <nav class="navbar">
-            <div class="container navbar-wrapper">
-                <a href="{% url 'index' %}" class="logo-brand" aria-label="Chitwan Removal Home">
-                    <img src="{% static 'images/logo_chitwan_removal.png' %}" alt="Chitwan Removal Premium Logo" class="nav-logo">
-                </a>
-                <ul class="nav-menu">
-                    <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
-                    <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
-                    <li><a href="{% url 'services' %}" class="nav-link">Our Services</a></li>
-                    <li><a href="{% url 'appliances' %}" class="nav-link">Appliances</a></li>
-                    <li><a href="{% url 'contact' %}" class="nav-btn">Get a Quote</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <!-- STICKY BRANDED SOCIAL WIDGET ROW (Left Flank Floating Desktop/Tablet) -->
-    <div class="sticky-social-dock">
-        <a href="https://wa.me/0470266582" class="dock-item wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" class="dock-item fb" aria-label="Visit Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="dock-item tt" aria-label="Visit TikTok"><i class="fab fa-tiktok"></i></a>
-        <a href="#" class="dock-item ig" aria-label="Visit Instagram"><i class="fab fa-instagram"></i></a>
     </div>
+
+    <!-- High-Visibility Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-wrapper">
+            <a href="{% url 'index' %}" class="logo-brand" aria-label="Chitwan Removal Home">
+                <img src="{% static 'images/logo_chitwan_removal.png' %}" alt="Chitwan Removal Premium Logo" class="nav-logo">
+            </a>
+
+            <!-- Mobile Toggle Trigger -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+            <label for="nav-toggle" class="mobile-toggle-btn" aria-label="Toggle Navigation Menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </label>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu">
+                <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                <li><a href="{% url 'services' %}" class="nav-link">Our Services</a></li>
+                <li><a href="{% url 'appliances' %}" class="nav-link">Appliances</a></li>
+                <li><a href="{% url 'contact' %}" class="nav-btn">Get a Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- STICKY BRANDED SOCIAL WIDGET (Desktop/Tablet Flank) -->
+<div class="sticky-social-dock">
+    <a href="https://wa.me/0470266582" class="dock-item" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" class="dock-item" aria-label="Visit Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="dock-item" aria-label="Visit TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="#" class="dock-item" aria-label="Visit Instagram"><i class="fab fa-instagram"></i></a>
+</div>
 
     <!-- Main Content Area -->
     <main>
@@ -81,7 +91,7 @@
     </main>
 
     <!-- BRAND AUTHENTIC FOOTER -->
-    <footer class="main-footer">
+<footer class="main-footer">
     <div class="container footer-grid">
         <div class="footer-brand">
             <img src="{% static 'images/logo_chitwan_removal.png' %}" alt="Chitwan Removal Trust Badge" class="footer-logo">
