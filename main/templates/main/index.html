@@ -4,7 +4,7 @@
 {% block title %}Chitwan Removal | Premium Moving & Relocation Services Lidcombe{% endblock %}
 
 {% block content %}
-<!-- HERO SECTION: MATCHING REMOVALIST NUMBER ONE STYLING -->
+<!-- HERO SECTION: TWO-COLOR PALETTE (#041D56 & #FFFFFF) -->
 <section id="home" class="hero-section">
     <div class="hero-container">
         
@@ -44,21 +44,11 @@
                 </div>
                 
                 {% if messages %}
-                <div class="messages-container" style="max-width: 1200px; margin: 15px auto 0 auto; padding: 0 10px;">
+                <div class="messages-container">
                     {% for message in messages %}
-                        {% if message.tags == 'success' %}
-                            <div style="padding: 12px 15px; border-radius: 6px; color: #0f5132; background-color: #d1e7dd; border: 1px solid #badbcc;">
-                                <i class="fas fa-check-circle"></i> {{ message }}
-                            </div>
-                        {% elif message.tags == 'warning' or message.tags == 'error' %}
-                            <div style="padding: 12px 15px; border-radius: 6px; color: #842029; background-color: #f8d7da; border: 1px solid #f5c2c7;">
-                                <i class="fas fa-exclamation-triangle"></i> {{ message }}
-                            </div>
-                        {% else %}
-                            <div style="padding: 12px 15px; border-radius: 6px; color: #055160; background-color: #cff4fc; border: 1px solid #b6effb;">
-                                <i class="fas fa-info-circle"></i> {{ message }}
-                            </div>
-                        {% endif %}
+                        <div class="alert-box {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' or message.tags == 'warning' %}alert-danger{% else %}alert-info{% endif %}">
+                            <i class="fas {% if message.tags == 'success' %}fa-check-circle{% elif message.tags == 'error' or message.tags == 'warning' %}fa-exclamation-triangle{% else %}fa-info-circle{% endif %}"></i> {{ message }}
+                        </div>
                     {% endfor %}
                 </div>
                 {% endif %}
@@ -175,7 +165,7 @@
     </div>
 </section>
 
-<!-- ABOUT US SECTION: DARK NAVY & MODERN ACCENT THEME -->
+<!-- ABOUT US SECTION: TWO-COLOR PALETTE (#041D56 & #FFFFFF) -->
 <section id="about" class="about-section">
     <div class="container about-grid">
         
@@ -193,7 +183,7 @@
         <!-- Right Column: Content & Value Propositions -->
         <div class="about-text-content">
             <span class="section-sub-badge"><i class="fas fa-info-circle"></i> Who We Are</span>
-            <h2>Dependable Relocation Specialists Serving Lidcombe & Beyond</h2>
+            <h2>Dependable Relocation Specialists Serving Lidcombe &amp; Beyond</h2>
             <div class="left-accent-line"></div>
             
             <p class="lead-paragraph">At Chitwan Removal, we treat your valuable household and commercial assets exactly like our own.</p>
@@ -231,7 +221,7 @@
     </div>
 </section>
 
-<!-- SERVICES SECTION: DARK NAVY & ACCENT BLUE THEME -->
+<!-- SERVICES SECTION: TWO-COLOR PALETTE (#041D56 & #FFFFFF) -->
 <section id="services" class="services-home-section">
     <div class="container compact-services-container">
         
@@ -267,7 +257,7 @@
                     <img src="{% static 'images/furniture_assemble.png' %}" alt="Furniture Assembly Operations" loading="lazy">
                 </div>
                 <div class="service-card-content">
-                    <h3><i class="fas fa-tools"></i> Furniture Assemble & Disassemble</h3>
+                    <h3><i class="fas fa-tools"></i> Furniture Assemble &amp; Disassemble</h3>
                     <ul class="compact-bullet-list">
                         <li><i class="fas fa-check-circle"></i> Professional handling of complex furniture pieces.</li>
                         <li><i class="fas fa-check-circle"></i> Expert assembly and disassembly to save you time and effort.</li>
@@ -282,7 +272,7 @@
                     <img src="{% static 'images/small_pick_drops.jpeg' %}" alt="Small Pick and Drops Van Delivery" loading="lazy">
                 </div>
                 <div class="service-card-content">
-                    <h3><i class="fas fa-boxes"></i> Small Pick & Drops</h3>
+                    <h3><i class="fas fa-boxes"></i> Small Pick &amp; Drops</h3>
                     <ul class="compact-bullet-list">
                         <li><i class="fas fa-check-circle"></i> Perfect for single items, store pickups, or small deliveries.</li>
                         <li><i class="fas fa-check-circle"></i> Flexible scheduling to fit your busy lifestyle.</li>
@@ -345,14 +335,14 @@
     </div>
 </section>
 
-<!-- APPLIANCE PRODUCT ARCHITECTURE SECTION -->
+<!-- APPLIANCE PRODUCT ARCHITECTURE SECTION: TWO-COLOR PALETTE (#041D56 & #FFFFFF) -->
 <section id="appliances" class="appliances-section">
     <div class="container product-showcase-grid">
         <div class="showcase-images">
             <img src="{% static 'images/Chitwan_Second_hand_appliance.png' %}" alt="Verified Quality Second Hand Appliances" loading="lazy" class="showcase-img" width="550" height="380">
         </div>
         <div class="showcase-text">
-            <span class="sub-heading">Quality Whitegoods Marketplace</span>
+            <span class="sub-heading"><i class="fas fa-check-circle"></i> Quality Whitegoods Marketplace</span>
             <h2>Second-Hand Appliances</h2>
             <p class="tagline">Quality You Can Trust</p>
             <p>Furnish your new residential living environment seamlessly and affordably. We offer fully certified, comprehensively tested domestic systems—including premium heavy-duty refrigerators, digital top-load laundry washing platforms, multi-mode microwaves, and home hardware configurations—all coupled with streamlined on-site home delivery deployment maps.</p>
@@ -361,13 +351,13 @@
     </div>
 </section>
 
-<!-- HIGH-DENSITY "WHY CHOOSE US" TRUST SECTION -->
+<!-- HIGH-DENSITY "WHY CHOOSE US" TRUST SECTION: TWO-COLOR PALETTE (#041D56 & #FFFFFF) -->
 <section class="trust-features-section">
     <div class="compact-trust-container">
         
         <!-- Compact Section Header -->
         <div class="trust-header text-center">
-            <span class="trust-badge"><i class="fas fa-shield-alt"></i> Safe & Dependable</span>
+            <span class="trust-badge"><i class="fas fa-shield-alt"></i> Safe &amp; Dependable</span>
             <h2>Why Choose Chitwan Removal?</h2>
             <div class="trust-accent-line"></div>
             <p>Built on reliability, fully insured transport, and complete commitment to customer satisfaction across every move.</p>
@@ -393,7 +383,7 @@
                     <i class="fas fa-clock"></i>
                 </div>
                 <div class="trust-card-body">
-                    <h3>Punctual & Reliable</h3>
+                    <h3>Punctual &amp; Reliable</h3>
                     <p>We respect your schedule. On-time arrival and fast, disciplined execution every single time.</p>
                 </div>
             </div>
@@ -415,7 +405,7 @@
                     <i class="fas fa-box-open"></i>
                 </div>
                 <div class="trust-card-body">
-                    <h3>Careful Packing & Handling</h3>
+                    <h3>Careful Packing &amp; Handling</h3>
                     <p>Specialized padding, blankets, and straps prevent scratches, dents, or transit damages.</p>
                 </div>
             </div>
@@ -465,7 +455,7 @@
     </div>
 </section>
 
-<!-- HIGH-IMPACT ABOUT & FLEET GUARANTEE SECTION WITH IMAGE -->
+<!-- HIGH-IMPACT ABOUT & FLEET GUARANTEE SECTION: TWO-COLOR PALETTE (#041D56 & #FFFFFF) -->
 <section class="about-feature-section" id="about-fleet">
     <div class="compact-feature-container">
         
@@ -492,7 +482,7 @@
             
             <div class="feature-header">
                 <span class="feature-tag-badge"><i class="fas fa-award"></i> Premium Removalists</span>
-                <h2>Reliable & Care-Driven Transport Services</h2>
+                <h2>Reliable &amp; Care-Driven Transport Services</h2>
                 <div class="feature-accent-line"></div>
                 <p>We combine modern fleet vehicles, heavy-duty protective equipment, and experienced movers to ensure your transition is seamless and worry-free.</p>
             </div>
@@ -553,7 +543,7 @@
     </div>
 </section>
 
-<!-- "HOW IT WORKS" PROCESS SECTION (WITH 60PX VERTICAL PADDING) -->
+<!-- "HOW IT WORKS" PROCESS SECTION: TWO-COLOR PALETTE (#041D56 & #FFFFFF) -->
 <section class="process-section" id="how-it-works">
     <div class="compact-process-container">
         
@@ -594,7 +584,7 @@
                 <div class="step-icon-wrapper">
                     <i class="fas fa-box-open"></i>
                 </div>
-                <h3>3. Pack & Load</h3>
+                <h3>3. Pack &amp; Load</h3>
                 <p>Our experienced team arrives punctually, disassembles furniture, wraps items safely, and loads the vehicle.</p>
             </div>
 
@@ -622,7 +612,7 @@
     </div>
 </section>
 
-<!-- CONVERSION OPTIMISED FORMS ENGINE -->
+<!-- CONVERSION OPTIMISED FORMS ENGINE: TWO-COLOR PALETTE (#041D56 & #FFFFFF) -->
 <section id="quote" class="quote-section">
     <div class="quote-container">
         
@@ -676,25 +666,6 @@
                     <p>Same-day and emergency bookings available across Sydney metropolitan areas.</p>
                 </div>
             </div>
-
-            <!-- Social Media Channels -->
-            <!--<div class="social-links-wrapper">-->
-            <!--    <span class="social-title">Connect With Us:</span>-->
-            <!--    <div class="social-icons">-->
-            <!--        <a href="#" class="social-btn brand-fb" aria-label="Facebook" target="_blank" rel="noopener">-->
-            <!--            <i class="fab fa-facebook-f"></i>-->
-            <!--        </a>-->
-            <!--        <a href="#" class="social-btn brand-insta" aria-label="Instagram" target="_blank" rel="noopener">-->
-            <!--            <i class="fab fa-instagram"></i>-->
-            <!--        </a>-->
-            <!--        <a href="#" class="social-btn brand-tiktok" aria-label="TikTok" target="_blank" rel="noopener">-->
-            <!--            <i class="fab fa-tiktok"></i>-->
-            <!--        </a>-->
-            <!--        <a href="https://wa.me/0470266582" class="social-btn brand-whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener">-->
-            <!--            <i class="fab fa-whatsapp"></i>-->
-            <!--        </a>-->
-            <!--    </div>-->
-            <!--</div>-->
         </div>
 
         <!-- RIGHT COLUMN: Interactive Quote Form -->
@@ -756,7 +727,7 @@
                                 <option value="House Removal">House Removal</option>
                                 <option value="Interstate Move">Interstate Move</option>
                                 <option value="Office Relocation">Office Relocation</option>
-                                <option value="Small Pick & Drop">Small Pick & Drop</option>
+                                <option value="Small Pick &amp; Drop">Small Pick &amp; Drop</option>
                                 <option value="Furniture Assembly">Furniture Assembly</option>
                                 <option value="Rubbish Removal">Rubbish Removal</option>
                                 <option value="Second Hand Appliances">Second-Hand Appliances</option>
